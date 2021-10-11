@@ -18,7 +18,6 @@ Common labels
 */}}
 {{- define "hive-metastore.labels" -}}
 helm.sh/chart: {{ include "hive-metastore.chart" . }}
-{{ include "hive-metastore.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
