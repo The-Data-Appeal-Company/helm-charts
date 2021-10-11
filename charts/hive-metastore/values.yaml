@@ -14,12 +14,18 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
-env:
-  HIVE_DB_EXTERNAL: "false"
-  HIVE_DB_NAME: metastore_db
 
-## Resource requests and limits: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-resources: {}
+database:
+  jdbc: "jdbc:postgresql://pg:5432/metastore_db"
+  driver: "org.postgresql.Driver"
+  username: hive_metastore
+  password: hive_metastore
+
+hive:
+  config: {}
+    # datanucleus.autoStartMechanism: SchemaTable
+
+resources: { }
 
 service:
   type: ClusterIP

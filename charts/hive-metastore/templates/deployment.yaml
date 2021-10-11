@@ -17,16 +17,16 @@ spec:
         {{- include "hive-metastore.labels" $ | trim | nindent 8 }}
         {{- include "hive-metastore.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+        - name: hive-metastore-config
+          configMap:
+            name: {{ include "hive-metastore.name" . }}-config
+
       containers:
         - name: {{ .Chart.Name }}
           image: "{{.Values.image.name}}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/opt/hive-metastore/bin/entrypoint.sh"]
-          env:
-          {{- range $key, $value := .Values.env }}
-          - name: {{ $key }}
-            value: "{{ $value }}"
-         {{- end }}
           ports:
             - name: tcp
               containerPort: 9083
@@ -39,12 +39,7 @@ spec:
               port: 9083
           resources:
           {{- toYaml .Values.resources | nindent 12 }}
-      {{- if eq .Values.env.HIVE_DB_EXTERNAL "true" }}
           volumeMounts:
-          - name: hive-conf-templates
-            mountPath: /opt/hive-metastore/conf/templates
-      volumes:
-      - name: hive-conf-templates
-        configMap:
-          name: {{ template "hive-metastore.name" . }}-conf-templates
-      {{- end }}
+            - mountPath: /opt/hive-metastore/conf/metastore-site.xml
+              subPath: metastore-site.xml
+              name: hive-metastore-config
