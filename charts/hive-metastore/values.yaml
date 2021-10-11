@@ -10,10 +10,9 @@ replicaCount: 1
 
 ## Default Hive image and tag. Please build image locally before applying this.
 image:
-  name: hive-metastore
+  name: datappeal/hive-metastore
   tag: latest
   pullPolicy: IfNotPresent
-
 
 env:
   HIVE_DB_EXTERNAL: "false"
