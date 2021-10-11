@@ -19,13 +19,7 @@ env:
   HIVE_DB_NAME: metastore_db
 
 ## Resource requests and limits: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
-resources:
-  limits:
-    cpu: 2
-    memory: 4Gi
-  requests:
-    cpu: 2
-    memory: 4Gi
+resources: {}
 
 service:
   type: ClusterIP
