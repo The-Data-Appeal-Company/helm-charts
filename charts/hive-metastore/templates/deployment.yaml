@@ -38,7 +38,7 @@ spec:
             tcpSocket:
               port: 9083
           resources:
-            {{- toYaml .Values.resources | trim  | nindent 12 }}
+          {{- toYaml .Values.resources | nindent 12 }}
       {{- if eq .Values.env.HIVE_DB_EXTERNAL "true" }}
           volumeMounts:
           - name: hive-conf-templates
