@@ -5,6 +5,10 @@ metadata:
   labels:
     {{- include "hive-metastore.labels" $ | trim | nindent 4 }}
 
+  {{- if .Values.service.annotations }}
+  annotations:
+  {{ toYaml .Values.service.annotations | indent 4 }}
+  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   {{- with .Values.service.ports }}

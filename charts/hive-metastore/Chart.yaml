@@ -13,4 +13,4 @@ sources:
 - https://github.com/amommendes/helm-hive-metastore
 - https://github.com/apache/hive
 - https://github.com/gradiant/charts
-version: 0.2.0
+version: 0.2.1

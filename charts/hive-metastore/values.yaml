@@ -28,6 +28,7 @@ hive:
 resources: { }
 
 service:
+  annotations: { }
   type: ClusterIP
   ports:
     - name: thrift
