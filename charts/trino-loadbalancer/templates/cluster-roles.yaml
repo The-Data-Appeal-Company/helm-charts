@@ -8,6 +8,7 @@ rules:
     resources:
       - services
       - namespaces
+      - pods
     verbs:
       - get
       - watch
