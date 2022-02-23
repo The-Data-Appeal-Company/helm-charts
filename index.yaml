@@ -54,6 +54,24 @@ entries:
   hive-metastore:
   - apiVersion: v1
     appVersion: 3.0.0
+    created: "2022-02-23T14:54:59.611611384Z"
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    digest: ec7ed1b082b3974ab023ee04f49506e9e99f5f8f9588d47b1bcbabf0ecafeb9d
+    home: https://hive.apache.org/
+    icon: https://hive.apache.org/images/hive_logo_medium.jpg
+    maintainers:
+    - email: amommendes@hotmail.com
+      name: amommendes
+    name: hive-metastore
+    sources:
+    - https://github.com/amommendes/helm-hive-metastore
+    - https://github.com/apache/hive
+    - https://github.com/gradiant/charts
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/hive-metastore-0.2.2/hive-metastore-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v1
+    appVersion: 3.0.0
     created: "2021-10-20T11:01:00.231811089Z"
     description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
     digest: b03cbdf87025fe6d36995257b9e926e72d5270f7e8add58e3680978141a4ded5
@@ -910,6 +928,16 @@ entries:
     - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/rds-exporter-0.0.2/rds-exporter-0.0.2.tgz
     version: 0.0.2
   trino:
+  - apiVersion: v2
+    appVersion: "371"
+    created: "2022-02-23T14:54:59.702483373Z"
+    description: Fast distributed SQL query engine for big data analytics
+    digest: 1cc38431bad4cf47eadb9f3c801d9e0322c9b1bcdb81437055d5311e23c00300
+    name: trino
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-0.1.19/trino-0.1.19.tgz
+    version: 0.1.19
   - apiVersion: v2
     appVersion: "365"
     created: "2021-12-06T10:59:48.958635353Z"
