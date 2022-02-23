@@ -5,7 +5,7 @@
 image:
   repository: trinodb/trino 
   pullPolicy: IfNotPresent
-  tag: 365
+  tag: 371
   imagePullSecrets: []
 
 server:

@@ -26,6 +26,10 @@ hive:
     # datanucleus.autoStartMechanism: SchemaTable
 
 resources: { }
+tolerations: []
+affinity: {}
+nodeSelector: {}
+
 
 service:
   annotations: { }
