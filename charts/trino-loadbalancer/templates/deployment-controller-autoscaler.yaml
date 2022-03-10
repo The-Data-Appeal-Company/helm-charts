@@ -1,19 +1,22 @@
-{{ if .Values.controller.enabled }}
+{{ if .Values.autoscaler.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "trino-loadbalancer.fullname" . }}-controller
+  name: {{ include "trino-loadbalancer.fullname" . }}-controller-autoscaler
   labels:
   {{- include "trino-loadbalancer.labels" . | nindent 4 }}
+    controller: autoscaler
 spec:
   replicas: 1
   selector:
     matchLabels:
   {{- include "trino-loadbalancer.selectorLabels" . | nindent 6 }}
+      controller: autoscaler
   template:
     metadata:
       labels:
     {{- include "trino-loadbalancer.selectorLabels" . | nindent 8 }}
+        controller: autoscaler
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -32,7 +35,7 @@ spec:
           {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          args: [ "controller", "legacy", "--config", "/config/config.yml", "--every", "{{ .Values.controller.delay }}" ]
+          args: [ "controller", "autoscaler", "--config", "/config/config.yml", "--every", "{{ .Values.autoscaler.delay }}" ]
           volumeMounts:
             - name: config-volume
               mountPath: /config

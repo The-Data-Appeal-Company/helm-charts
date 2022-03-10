@@ -74,6 +74,10 @@ controller:
   enabled: false
   delay: 10s
 
+autoscaler:
+  enabled: false
+  delay: 10s
+
 config:
   proxy:
     port: 8998
