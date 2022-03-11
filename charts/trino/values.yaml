@@ -54,6 +54,8 @@ securityContext:
   runAsGroup: 1000
 
 service:
+  labels: {}
+  annotations: {}
   type: ClusterIP
   port: 8080
 
