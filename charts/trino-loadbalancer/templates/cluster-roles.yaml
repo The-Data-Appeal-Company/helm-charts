@@ -4,12 +4,24 @@ metadata:
   name: {{include "trino-loadbalancer.fullname" .}}
 rules:
   - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - deployments/scale
+    verbs:
+      - get
+      - update
+      - patch
+      - list
+  - apiGroups:
       - ""
     resources:
       - services
       - namespaces
       - pods
+      - deployments
     verbs:
       - get
       - watch
       - list
+      - update
