@@ -59,5 +59,8 @@ serviceMonitor:
 
 discovery:
   aws: false
-  k8s: false
+  k8s:
+    enabled: false
+    service:
+      labelSelector: ""
 

@@ -32,8 +32,12 @@ spec:
               "--aws-autodiscovery=true",
             {{ end }}
 
-            {{ if .Values.discovery.k8s }}
+            {{ if .Values.discovery.k8s.enabled }}
               "--k8s-autodiscovery=true",
+            {{ end }}
+
+            {{ if .Values.discovery.k8s.enabled }}
+            "--k8s-svc-label-selector={{ .Values.discovery.k8s.service.labelSelector }}",
             {{ end }}
           ]
           ports:
