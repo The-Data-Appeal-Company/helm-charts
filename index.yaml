@@ -1080,6 +1080,16 @@ entries:
     version: 0.1.2
   trino-exporter:
   - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2022-03-14T15:56:44.937701907Z"
+    description: Trino exporter helm chart
+    digest: c3e34e9c9fc8a9a8fb9fb9166fbc2df2d122bf8214a7175bb0d0fd9d30e4ebb2
+    name: trino-exporter
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-exporter-0.0.11/trino-exporter-0.0.11.tgz
+    version: 0.0.11
+  - apiVersion: v2
     appVersion: 0.0.3
     created: "2021-03-16T17:03:38.645933792Z"
     description: Trino exporter helm chart
