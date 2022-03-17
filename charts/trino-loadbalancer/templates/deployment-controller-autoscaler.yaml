@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-    {{- include "trino-loadbalancer.selectorLabels" . | nindent 8 }}
+    {{- include "trino-loadbalancer.podsLabels" . | nindent 8 }}
         controller: autoscaler
     spec:
       {{- with .Values.imagePullSecrets }}

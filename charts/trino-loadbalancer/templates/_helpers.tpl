@@ -36,7 +36,7 @@ Common labels
 */}}
 {{- define "trino-loadbalancer.labels" -}}
 helm.sh/chart: {{ include "trino-loadbalancer.chart" . }}
-{{ include "trino-loadbalancer.selectorLabels" . }}
+{{ include "trino-loadbalancer.podsLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -49,6 +49,14 @@ Selector labels
 {{- define "trino-loadbalancer.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "trino-loadbalancer.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Pods labels
+*/}}
+{{- define "trino-loadbalancer.podsLabels" -}}
+{{ include "trino-loadbalancer.selectorLabels" . }}
+version: {{ .Chart.AppVersion | quote }}
 {{- end -}}
 
 {{/*
