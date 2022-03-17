@@ -39,6 +39,7 @@ spec:
           configMap:
             name: {{ template "trino.jmx-exporter" . }}
         {{ end }}
+      terminationGracePeriodSeconds: {{ .Values.server.gracefulShutdown.gracePeriodSeconds }}
       containers:
         - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
