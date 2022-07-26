@@ -674,7 +674,7 @@ exporters:
 exchange:
   enabled: false
   aws:
-    base-directories: "s3://sample"
+    base_directories: "s3://sample"
     region: "eu-west-1"
-    access-key: "key"
-    secret-key: "secret"
+    access_key: "key"
+    secret_key: "secret"
