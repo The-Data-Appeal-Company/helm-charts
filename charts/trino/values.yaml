@@ -5,7 +5,7 @@
 image:
   repository: trinodb/trino 
   pullPolicy: IfNotPresent
-  tag: 376
+  tag: 390
   imagePullSecrets: []
 
 server:
@@ -669,3 +669,12 @@ exporters:
       interval: 30s
       scrapeTimeout: 30s
       scheme: http
+
+
+exchange:
+  enabled: false
+  aws:
+    base-directories: "s3://sample"
+    region: "eu-west-1"
+    access-key: "key"
+    secret-key: "secret"
