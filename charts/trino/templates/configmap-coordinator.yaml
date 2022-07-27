@@ -11,7 +11,7 @@ metadata:
 data:
   {{ if .Values.exchange.enabled }}
   exchange-manager.properties: |
-    exchange-manager.name="filesystem"
+    exchange-manager.name=filesystem
     exchange.base-directories={{ .Values.exchange.aws.base_directories }}
     exchange.s3.region={{ .Values.exchange.aws.region }}
     exchange.s3.aws-access-key={{ .Values.exchange.aws.access_key }}
