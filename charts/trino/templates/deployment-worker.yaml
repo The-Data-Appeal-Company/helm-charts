@@ -55,7 +55,7 @@ spec:
             - mountPath: {{ .Values.server.config.path }}/catalog
               name: connectors-config-volume
             {{ if .Values.exchange.enabled }}
-            - mountPath: { { .Values.server.config.path } }
+            - mountPath: {{ .Values.server.config.path }}
               name: config-exchange-manager
             {{ end }}
           ports:
