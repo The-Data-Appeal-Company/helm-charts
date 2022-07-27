@@ -9,6 +9,15 @@ metadata:
     heritage: {{ .Release.Service }}
     component: coordinator
 data:
+  {{ if .Values.exchange.enabled }}
+  exchange-manager.properties: |
+    exchange-manager.name="filesystem"
+    exchange.base-directories={{ .Values.exchange.aws.base_directories }}
+    exchange.s3.region={{ .Values.exchange.aws.region }}
+    exchange.s3.aws-access-key={{ .Values.exchange.aws.access_key }}
+    exchange.s3.aws-secret-key={{ .Values.exchange.aws.secret_key }}
+
+  {{ end }}
   node.properties: |
     node.environment={{ .Values.server.node.environment }}
     node.data-dir={{ .Values.server.node.dataDir }}

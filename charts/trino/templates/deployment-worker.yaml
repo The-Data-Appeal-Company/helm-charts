@@ -39,11 +39,6 @@ spec:
           configMap:
             name: {{ template "trino.jmx-exporter" . }}
         {{ end }}
-        {{ if .Values.exchange.enabled }}
-        - name: config-exchange-manager
-          configMap:
-            name: {{ template "trino.exchange-manager" . }}
-        {{ end }}
       terminationGracePeriodSeconds: {{ .Values.server.gracefulShutdown.gracePeriodSeconds }}
       containers:
         - name: {{ .Chart.Name }}-worker
@@ -54,10 +49,6 @@ spec:
               name: config-volume
             - mountPath: {{ .Values.server.config.path }}/catalog
               name: connectors-config-volume
-            {{ if .Values.exchange.enabled }}
-            - mountPath: {{ .Values.server.config.path }}
-              name: config-exchange-manager
-            {{ end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
