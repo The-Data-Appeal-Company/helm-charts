@@ -82,6 +82,7 @@ serviceAccount:
 ingress:
   enabled: false
   path: /
+  # ingressClassName: nginx
   # Used to create an Ingress record.
   # hosts:
     # - chart-example.local
