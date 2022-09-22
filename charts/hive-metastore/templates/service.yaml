@@ -4,11 +4,10 @@ metadata:
   name: {{ include "hive-metastore.name" . }}
   labels:
     {{- include "hive-metastore.labels" $ | trim | nindent 4 }}
-
-  {{- if .Values.service.annotations }}
+{{- with .Values.service.annotations }}
   annotations:
-  {{ toYaml .Values.service.annotations | indent 4 }}
-  {{- end }}
+{{ toYaml . | indent 4 }}
+{{- end }}
 spec:
   type: {{ .Values.service.type }}
   {{- with .Values.service.ports }}
