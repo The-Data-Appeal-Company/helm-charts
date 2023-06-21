@@ -1339,6 +1339,16 @@ entries:
     version: 0.0.10
   trino-loadbalancer:
   - apiVersion: v2
+    appVersion: 0.2.7
+    created: "2023-06-21T15:06:54.361380117Z"
+    description: Trino loadbalancer helm chart
+    digest: ae5da3eecb379d4aa6d051a697e17b291b7baa687d00527821398a8045cac654
+    name: trino-loadbalancer
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-loadbalancer-0.2.7/trino-loadbalancer-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v2
     appVersion: 0.2.6
     created: "2023-06-21T14:15:56.81504004Z"
     description: Trino loadbalancer helm chart
