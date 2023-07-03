@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: datappeal/trino-loadbalancer
-  tag: sha-45d55ed2
+  tag: sha-6d5d9042
   pullPolicy: Always
 
 imagePullSecrets: [ ]
