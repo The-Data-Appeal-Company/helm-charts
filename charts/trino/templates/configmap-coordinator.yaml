@@ -18,6 +18,20 @@ data:
     exchange.s3.aws-secret-key={{ .Values.exchange.aws.secret_key }}
   {{ end }}
 
+  {{ if .Values.event_listener.enabled }}
+  http-event-listener.properties: |
+    event-listener.name=http
+    http-event-listener.log-created={{ .Values.event_listener.http.log_created }}
+    http-event-listener.log-completed={{ .Values.event_listener.http.log_completed }}
+    http-event-listener.log-split={{ .Values.event_listener.http.log_split }}
+    http-event-listener.connect-http-headers={{ .Values.event_listener.http.headers }}
+    http-event-listener.connect-retry-count={{ .Values.event_listener.http.retry_count }}
+    http-event-listener.connect-retry-delay={{ .Values.event_listener.http.retry_delay }}
+    http-event-listener.connect-backoff-base={{ .Values.event_listener.http.backoff_base }}
+    http-event-listener.connect-max-delay={{ .Values.event_listener.http.max_delay }}
+    http-event-listener.connect-ingest-uri={{ .Values.event_listener.http.ingest_uri }}
+  {{ end }}
+
   node.properties: |
     node.environment={{ .Values.server.node.environment }}
     node.data-dir={{ .Values.server.node.dataDir }}
@@ -58,6 +72,9 @@ data:
     query.max-memory-per-node={{ .Values.server.config.query.maxMemoryPerNode }}
     discovery-server.enabled=true
     discovery.uri=http://localhost:{{ .Values.service.port }}
+    {{ if .Values.event_listener.enabled }}
+    event-listener.config-files={{ .Values.server.config.path }}/http-event-listener.properties
+    {{ end }}
     {{ if .Values.exporters.jmx.enabled }}
     jmx.rmiregistry.port={{ .Values.server.jmx.registryPort }}
     jmx.rmiserver.port={{ .Values.server.jmx.serverPort }}

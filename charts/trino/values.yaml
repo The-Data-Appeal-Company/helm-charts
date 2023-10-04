@@ -678,3 +678,16 @@ exchange:
     region: "eu-west-1"
     access_key: "key"
     secret_key: "secret"
+
+event_listener:
+  enabled: false
+  http:
+    log_created: false
+    log_completed: true
+    log_split: false
+    headers: ""
+    retry_count: 0
+    retry_delay: "1s"
+    backoff_base: "2"
+    max_delay: "1m"
+    ingest_uri: "<your ingest URI>"
