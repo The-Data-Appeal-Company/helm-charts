@@ -1022,6 +1022,16 @@ entries:
     version: 0.0.2
   trino:
   - apiVersion: v2
+    appVersion: "436"
+    created: "2024-01-15T10:49:09.316336578Z"
+    description: Fast distributed SQL query engine for big data analytics
+    digest: 5321c8d7858432fd487e808b7c945eee7fa1f46e3fc88b401e1643f75610be2f
+    name: trino
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-0.1.41/trino-0.1.41.tgz
+    version: 0.1.41
+  - apiVersion: v2
     appVersion: "422"
     created: "2023-10-04T12:39:51.643567195Z"
     description: Fast distributed SQL query engine for big data analytics
