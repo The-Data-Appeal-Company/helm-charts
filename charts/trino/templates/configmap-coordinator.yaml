@@ -70,7 +70,6 @@ data:
     http-server.http.port={{ .Values.service.port }}
     query.max-memory={{ .Values.server.config.query.maxMemory }}
     query.max-memory-per-node={{ .Values.server.config.query.maxMemoryPerNode }}
-    discovery-server.enabled=true
     discovery.uri=http://localhost:{{ .Values.service.port }}
     {{ if .Values.event_listener.enabled }}
     event-listener.config-files={{ .Values.server.config.path }}/http-event-listener.properties
