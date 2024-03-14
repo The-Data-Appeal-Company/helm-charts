@@ -55,7 +55,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2022-09-22T15:57:04.09393099Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 0ca385cc98728335dcf744945e98cc1e32f442f9374dd055ffd4339dd8df1089
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -73,7 +76,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2022-02-23T14:54:59.611611384Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: ec7ed1b082b3974ab023ee04f49506e9e99f5f8f9588d47b1bcbabf0ecafeb9d
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -91,7 +97,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-20T11:01:00.231811089Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: b03cbdf87025fe6d36995257b9e926e72d5270f7e8add58e3680978141a4ded5
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -109,7 +118,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T14:52:48.722951967Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: d3f77d7bcf8956dd30e5f6879a57b706c7c9c0cf872f76f1e0598548676dc3a5
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -127,7 +139,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T11:13:55.735509066Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 7ff30a465074a93d8f65a9922b1e4b7b24cf14c931053436ab4e6e7f51b94739
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -145,7 +160,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T11:07:41.606598556Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: b1af24d3dd648b1d997c9109cc568a0d739f968e1c9fef712a43276f4a1506b3
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -163,7 +181,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T10:34:36.197833832Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: beb2e475a30a4e17ae7476cca3195635c906d2df2e402762f566a289729073a5
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -181,7 +202,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T09:11:53.483007411Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 5157281d788e9ebc3f637a851ff74e3d8d91a71a3d7da61b314908dc1e715db2
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -199,7 +223,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T08:48:34.485582794Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 7cd5394f14143e7af059f0785acff44dfb0fbf2eed9b548619b82d4e07480ed8
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -217,7 +244,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T08:39:48.658036886Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 84c158a55888180f51267cf50b1e7c5aefbd462334852e8c78abd3079219bd2a
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -235,7 +265,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-11T08:03:35.921809922Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 3c06669b29f8d4789357a7228178ed6a5cef214c1eb271c8cc54dbce5c009f44
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -253,7 +286,10 @@ entries:
   - apiVersion: v1
     appVersion: 3.0.0
     created: "2021-10-08T15:59:21.707928677Z"
-    description: The Apache Hive ™ data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL. Structure can be projected onto data already in storage. A command line tool and JDBC driver are provided to connect users to Hive.
+    description: The Apache Hive ™ data warehouse software facilitates reading, writing,
+      and managing large datasets residing in distributed storage using SQL. Structure
+      can be projected onto data already in storage. A command line tool and JDBC
+      driver are provided to connect users to Hive.
     digest: 349d62838909027afe78a09517b16990c9661cd583ee9ea922a285b8cdb10436
     home: https://hive.apache.org/
     icon: https://hive.apache.org/images/hive_logo_medium.jpg
@@ -272,7 +308,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2024-01-19T11:41:09.161828734Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: 4cf2d24338dd19314f89f7e85012f55bd46989c7f0c00c0d9a5e4721b7ccef7b
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -297,7 +334,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2024-01-08T11:45:16.938871312Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: 61b98fc685aa275fbab9be6435281e21d9ff83caa4b47fec58b3a402214776db
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -322,7 +360,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2022-09-10T13:27:45.350672896Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: f42221a3ce190ac1d2caa03944fa10b64865460eb856503275db5f20513752a3
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -347,7 +386,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2022-09-02T15:05:43.151139832Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: cea4c6f12efbc97367756ac9fbf6afca48aa605033642e0a40403b4b3513f81a
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -372,7 +412,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T23:45:49.934150311Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: 7ce02c6194d070a9663178a898fbb1781d8a8a16aa83b271c77bafbbe95f70f6
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -397,7 +438,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T23:33:50.807244017Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: cfe9035ac1a46c74ec0a7338f64f9c7d0991b98e3e280f56f32e2288cf710b6d
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -422,7 +464,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T23:27:37.291232846Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: ab9fd6f745275eb2a717a4cbb5e37c7e7175f63e27056d05f92fe684034d1da6
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -447,7 +490,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T23:00:34.908220297Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: 0c7fde3887fc72ffd3bb475f0ce7455aa01239c784d985db5bae680d270173b2
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -472,7 +516,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T22:11:21.253896998Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: 4da408f48d93d517338676cba1bc4508be27398846f2b1270733701299ccd9c3
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -495,7 +540,8 @@ entries:
   - apiVersion: v1
     appVersion: 5.1.0
     created: "2021-01-16T21:28:43.996784Z"
-    description: A reverse proxy that provides authentication with Google, Github or other providers
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
     digest: c56d4df42b7b9b325866c53f62a852e9738bb8e78e5eec2c32b59a339e07ae9f
     home: https://oauth2-proxy.github.io/oauth2-proxy/
     keywords:
@@ -1047,6 +1093,16 @@ entries:
     version: 0.0.2
   trino:
   - apiVersion: v2
+    appVersion: "441"
+    created: "2024-03-14T14:06:26.38443113Z"
+    description: Fast distributed SQL query engine for big data analytics
+    digest: b374c797c8f2897f465912f7d973ed53196032b1cef25d7eff0643701c921b01
+    name: trino
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-0.1.43/trino-0.1.43.tgz
+    version: 0.1.43
+  - apiVersion: v2
     appVersion: "436"
     created: "2024-01-16T09:46:10.430389032Z"
     description: Fast distributed SQL query engine for big data analytics
@@ -1528,4 +1584,4 @@ entries:
     urls:
     - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-loadbalancer-0.1.17/trino-loadbalancer-0.1.17.tgz
     version: 0.1.17
-generated: "2020-09-28T13:39:12.541422748Z"
+generated: "2024-03-14T14:06:26.385744189Z"
