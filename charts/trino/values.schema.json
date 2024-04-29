@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "server": {
+      "type": "object",
+      "title": "Server settings",
+      "form": true,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "title": "Workload Kind",
+          "form": true,
+          "description": "Allowed values: `Deployment`or `StatefulSet`",
+          "enum": [
+            "Deployment",
+            "StatefulSet"
+          ]
+        }
+      }
+    }
+  }
+}

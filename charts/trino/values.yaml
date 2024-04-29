@@ -3,12 +3,13 @@
 # Declare variables to be passed into your templates.
 
 image:
-  repository: trinodb/trino 
+  repository: trinodb/trino
   pullPolicy: IfNotPresent
-  tag: 444
+  tag: 445
   imagePullSecrets: []
 
 server:
+  kind: Deployment
   workers: 2
   node:
     environment: production
@@ -64,12 +65,43 @@ coordinator:
   tolerations: []
   affinity: {}
   resources: {}
+  persistence:
+    enabled: false
+    path: /data
+    subPath: ""
+    subPathExpr: ""
+    storageClass: ""
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+    dataSource: { }
+    existingClaim: ""
+  persistentVolumeClaimRetentionPolicy:
+    enabled: false
+    whenScaled: Retain
+    whenDeleted: Retain
 
 worker:
   nodeSelector: {}
   tolerations: []
   affinity: {}
   resources: {}
+  persistence:
+    enabled: false
+    path: /data
+    subPath: ""
+    subPathExpr: ""
+    storageClass: ""
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+    selector: { }
+    dataSource: { }
+    existingClaim: ""
+  persistentVolumeClaimRetentionPolicy:
+    enabled: false
+    whenScaled: Retain
+    whenDeleted: Retain
 
 exporters:
   jmx:

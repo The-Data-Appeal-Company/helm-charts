@@ -1,25 +1,30 @@
+{{- if gt (int .Values.server.workers) 0 }}
 apiVersion: apps/v1
-kind: Deployment
+kind: {{ .Values.server.kind }}
 metadata:
-  name: {{ template "trino.coordinator" . }}
+  name: {{ template "trino.worker" . }}
   labels:
     app: {{ template "trino.name" . }}
     chart: {{ template "trino.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-    component: coordinator
+    component: worker
 spec:
+  replicas: {{ .Values.server.workers }}
+  {{ if (eq .Values.server.kind "StatefulSet") }}
+  serviceName: {{ template "trino.worker.svcName" . }}
+  {{ end }}
   selector:
     matchLabels:
       app: {{ template "trino.name" . }}
       release: {{ .Release.Name }}
-      component: coordinator
+      component: worker
   template:
     metadata:
       labels:
         app: {{ template "trino.name" . }}
         release: {{ .Release.Name }}
-        component: coordinator
+        component: worker
     spec:
       {{- with .Values.image.imagePullSecrets }}
       imagePullSecrets:
@@ -27,13 +32,12 @@ spec:
       {{- end }}
       {{- with .Values.securityContext }}
       securityContext:
-        runAsUser: {{ .runAsUser }}
-        runAsGroup: {{ .runAsGroup }}
+        fsGroup: {{ .runAsGroup }}
       {{- end }}
       volumes:
         - name: config-volume
           configMap:
-            name: {{ template "trino.coordinator" . }}
+            name: {{ template "trino.worker" . }}
         - name: connectors-config-volume
           configMap:
             name: {{ template "trino.connectors" . }}
@@ -41,16 +45,33 @@ spec:
         - name: config-jmx-exporter
           configMap:
             name: {{ template "trino.jmx-exporter" . }}
-      {{ end }}
+        {{ end }}
+        {{ if or (not .Values.worker.persistence.enabled) (not (eq .Values.server.kind "StatefulSet")) }}
+        - name: trino-data
+          emptyDir: {}
+        {{ end }}
+      terminationGracePeriodSeconds: {{ .Values.server.gracefulShutdown.gracePeriodSeconds }}
       containers:
-        - name: {{ .Chart.Name }}-coordinator
+        - name: {{ .Chart.Name }}-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.securityContext }}
+          securityContext:
+            runAsUser: {{ .runAsUser }}
+            runAsGroup: {{ .runAsGroup }}
+          {{- end }}
           volumeMounts:
             - mountPath: {{ .Values.server.config.path }}
               name: config-volume
             - mountPath: {{ .Values.server.config.path }}/catalog
               name: connectors-config-volume
+            - name: trino-data
+              mountPath: {{ .Values.worker.persistence.path }}
+              {{- if .Values.worker.persistence.subPath }}
+              subPath: {{ .Values.worker.persistence.subPath }}
+              {{- else if .Values.worker.persistence.subPathExpr }}
+              subPathExpr: {{ .Values.worker.persistence.subPathExpr }}
+              {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -63,9 +84,18 @@ spec:
             httpGet:
               path: /v1/info
               port: http
-          resources:
-            {{- toYaml .Values.coordinator.resources | nindent 12 }}
+          {{ if .Values.server.gracefulShutdown.enabled }}
+          lifecycle:
+            preStop:
+              exec:
+                command: [
+                    "sh", "-c",
+                    "curl -v  -H \"X-Trino-User: admin\" -X PUT -d '\"SHUTTING_DOWN\"' -H \"Content-type: application/json\" http://localhost:8080/v1/info/state && sleep {{ .Values.server.gracefulShutdown.gracePeriodSeconds }}"
+                ]
+          {{end }}
 
+          resources:
+            {{- toYaml .Values.worker.resources | nindent 12 }}
 
         {{ if .Values.exporters.jmx.enabled }}
         - name: jmx-exporter
@@ -110,16 +140,47 @@ spec:
               subPath: config.yml
       {{- end }}
 
-
-      {{- with .Values.coordinator.nodeSelector }}
+      {{- with .Values.worker.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .Values.coordinator.affinity }}
+      {{- with .Values.worker.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with .Values.coordinator.tolerations }}
+      {{- with .Values.worker.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
+
+  {{ if and (.Values.worker.persistence.enabled ) (eq .Values.server.kind "StatefulSet") }}
+
+  {{ if .Values.worker.persistentVolumeClaimRetentionPolicy.enabled }}
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: { { .Values.worker.persistentVolumeClaimRetentionPolicy.whenDeleted } }
+    whenScaled: { { .Values.worker.persistentVolumeClaimRetentionPolicy.whenScaled } }
+  {{ end }}
+
+  volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: trino-data
+        labels:
+          app: {{ template "trino.name" . }}
+          chart: {{ template "trino.chart" . }}
+          release: {{ .Release.Name }}
+          heritage: {{ .Release.Service }}
+          component: worker
+      spec:
+        storageClassName: {{ .Values.worker.persistence.storageClass  | quote }}
+        accessModes:
+        {{ range .Values.worker.persistence.accessModes }}
+        - {{ . | quote }}
+        {{ end }}
+        resources:
+          requests:
+            storage: {{ .Values.worker.persistence.size | quote }}
+  {{ end }}
+{{- end }}

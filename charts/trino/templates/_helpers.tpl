@@ -35,8 +35,16 @@ Create chart name and version as used by the chart label.
 {{ template "trino.fullname" . }}-coordinator
 {{- end -}}
 
+{{- define "trino.coordinator.svcName" -}}
+{{ template "trino.coordinator" . }}-headless
+{{- end -}}
+
 {{- define "trino.worker" -}}
 {{ template "trino.fullname" . }}-worker
+{{- end -}}
+
+{{- define "trino.worker.svcName" -}}
+{{ template "trino.worker" . }}-headless
 {{- end -}}
 
 {{- define "trino.connectors" -}}
