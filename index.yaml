@@ -1495,6 +1495,16 @@ entries:
   trino-exporter:
   - apiVersion: v2
     appVersion: 0.0.4
+    created: "2024-06-12T08:55:20.783653071Z"
+    description: Trino exporter helm chart
+    digest: 02ec58435200eeb9a43c2ba151566477266c3c4abd571e4b0b4b3e30222bb61a
+    name: trino-exporter
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-exporter-0.0.12/trino-exporter-0.0.12.tgz
+    version: 0.0.12
+  - apiVersion: v2
+    appVersion: 0.0.4
     created: "2022-03-14T15:56:44.937701907Z"
     description: Trino exporter helm chart
     digest: c3e34e9c9fc8a9a8fb9fb9166fbc2df2d122bf8214a7175bb0d0fd9d30e4ebb2
@@ -1514,6 +1524,16 @@ entries:
     - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-exporter-0.0.10/trino-exporter-0.0.10.tgz
     version: 0.0.10
   trino-loadbalancer:
+  - apiVersion: v2
+    appVersion: 0.2.9
+    created: "2024-06-12T08:55:20.864238309Z"
+    description: Trino loadbalancer helm chart
+    digest: 3eac711554ffbdde4a5b4c7155d09dfc2665d9b9663a35f7d60a0be9f6cc7a34
+    name: trino-loadbalancer
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-loadbalancer-0.2.9/trino-loadbalancer-0.2.9.tgz
+    version: 0.2.9
   - apiVersion: v2
     appVersion: 0.2.8
     created: "2023-07-03T13:52:52.298516434Z"
@@ -1614,4 +1634,4 @@ entries:
     urls:
     - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-loadbalancer-0.1.17/trino-loadbalancer-0.1.17.tgz
     version: 0.1.17
-generated: "2024-06-10T12:42:04.822784919Z"
+generated: "2024-06-12T08:55:20.864471635Z"
