@@ -32,7 +32,7 @@ securityContext: { }
 service:
   annotations: { }
   type: ClusterIP
-  port: 80
+  port: 8888
 
 resources: { }
   # We usually recommend not to specify default resources and to leave this as a conscious

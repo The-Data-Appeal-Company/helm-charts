@@ -3,5 +3,5 @@ name: trino-exporter
 description: Trino exporter helm chart
 
 type: application
-version: 0.0.11
+version: 0.0.12
 appVersion: 0.0.4
