@@ -3,5 +3,5 @@ name: trino-loadbalancer
 description: Trino loadbalancer helm chart
 
 type: application
-version: 0.2.9
-appVersion: 0.2.9
+version: 0.3.0
+appVersion: 0.3.0
