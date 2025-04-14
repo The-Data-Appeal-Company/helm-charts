@@ -79,10 +79,20 @@ spec:
             httpGet:
               path: /v1/info
               port: http
+            initialDelaySeconds: {{ .Values.coordinator.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.coordinator.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.coordinator.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.coordinator.livenessProbe.failureThreshold }}
+            successThreshold: {{ .Values.coordinator.livenessProbe.successThreshold }}
           readinessProbe:
-            httpGet:
-              path: /v1/info
-              port: http
+            exec:
+              command: [ /usr/lib/trino/bin/health-check ]
+            initialDelaySeconds: {{ .Values.coordinator.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.coordinator.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.coordinator.readinessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.coordinator.readinessProbe.failureThreshold }}
+            successThreshold: {{ .Values.coordinator.readinessProbe.successThreshold }}
+
           resources:
             {{- toYaml .Values.coordinator.resources | nindent 12 }}
 

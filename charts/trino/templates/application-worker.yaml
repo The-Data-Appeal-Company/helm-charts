@@ -80,10 +80,19 @@ spec:
             httpGet:
               path: /v1/info
               port: http
+            initialDelaySeconds: {{ .Values.worker.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.worker.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.worker.livenessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.worker.livenessProbe.failureThreshold }}
+            successThreshold: {{ .Values.worker.livenessProbe.successThreshold }}
           readinessProbe:
-            httpGet:
-              path: /v1/info
-              port: http
+            exec:
+              command: [ /usr/lib/trino/bin/health-check ]
+            initialDelaySeconds: {{ .Values.worker.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.worker.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.worker.readinessProbe.timeoutSeconds }}
+            failureThreshold: {{ .Values.worker.readinessProbe.failureThreshold }}
+            successThreshold: {{ .Values.worker.readinessProbe.successThreshold }}
           {{ if .Values.server.gracefulShutdown.enabled }}
           lifecycle:
             preStop:
