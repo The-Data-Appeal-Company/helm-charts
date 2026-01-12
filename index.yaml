@@ -1094,6 +1094,16 @@ entries:
   trino:
   - apiVersion: v2
     appVersion: "479"
+    created: "2026-01-12T14:13:32.070721906Z"
+    description: Fast distributed SQL query engine for big data analytics
+    digest: 5bc270e29b7e7062ec997a95f42488d50dbaacaa909945fa32410f12ad395a38
+    name: trino
+    type: application
+    urls:
+    - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-0.2.10/trino-0.2.10.tgz
+    version: 0.2.10
+  - apiVersion: v2
+    appVersion: "479"
     created: "2026-01-08T10:54:08.434981253Z"
     description: Fast distributed SQL query engine for big data analytics
     digest: 7a83502e93128d0a709a5f3cf6287bf1cfb8e6584ea4948c903e5b064160db81
@@ -1734,4 +1744,4 @@ entries:
     urls:
     - https://github.com/The-Data-Appeal-Company/helm-charts/releases/download/trino-loadbalancer-0.1.17/trino-loadbalancer-0.1.17.tgz
     version: 0.1.17
-generated: "2026-01-08T10:54:08.435443587Z"
+generated: "2026-01-12T14:13:32.071269764Z"
