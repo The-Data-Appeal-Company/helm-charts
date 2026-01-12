@@ -740,7 +740,6 @@ event_listener:
   http:
     log_created: false
     log_completed: true
-    log_split: false
     headers: ""
     retry_count: 0
     retry_delay: "1s"

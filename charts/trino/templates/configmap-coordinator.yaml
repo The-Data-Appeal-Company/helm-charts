@@ -23,7 +23,6 @@ data:
     event-listener.name=http
     http-event-listener.log-created={{ .Values.event_listener.http.log_created }}
     http-event-listener.log-completed={{ .Values.event_listener.http.log_completed }}
-    http-event-listener.log-split={{ .Values.event_listener.http.log_split }}
     http-event-listener.connect-http-headers={{ .Values.event_listener.http.headers }}
     http-event-listener.connect-retry-count={{ .Values.event_listener.http.retry_count }}
     http-event-listener.connect-retry-delay={{ .Values.event_listener.http.retry_delay }}
