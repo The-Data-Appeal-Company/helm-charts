@@ -54,3 +54,7 @@ Create chart name and version as used by the chart label.
 {{- define "trino.jmx-exporter" -}}
 {{ template "trino.fullname" . }}-jmx-exporter
 {{- end -}}
+
+{{- define "trino.alluxio" -}}
+{{ template "trino.fullname" . }}-alluxio
+{{- end -}}

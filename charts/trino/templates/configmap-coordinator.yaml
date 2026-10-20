@@ -31,6 +31,14 @@ data:
     http-event-listener.connect-ingest-uri={{ .Values.event_listener.http.ingest_uri }}
   {{ end }}
 
+  {{ if .Values.server.alluxio.enabled }}
+  cache-manager-alluxio.properties:
+    cache-manager.name=alluxio
+    fs.cache.directories={{ .Values.server.alluxio.directories }}
+    fs.cache.max-sizes={{ .Values.server.alluxio.max-sizes }}
+    fs.cache.ttl={{ .Values.server.alluxio.ttl }}
+  {{ end }}
+
   node.properties: |
     node.environment={{ .Values.server.node.environment }}
     node.data-dir={{ .Values.server.node.dataDir }}
@@ -61,15 +69,18 @@ data:
 
   config.properties: |
     coordinator=true
-{{- if gt (int .Values.server.workers) 0 }}
+    {{- if gt (int .Values.server.workers) 0 }}
     node-scheduler.include-coordinator=false
-{{- else }}
+    {{- else }}
     node-scheduler.include-coordinator=true
-{{- end }}
+    {{- end }}
     http-server.http.port={{ .Values.service.port }}
     query.max-memory={{ .Values.server.config.query.maxMemory }}
     query.max-memory-per-node={{ .Values.server.config.query.maxMemoryPerNode }}
     discovery.uri=http://localhost:{{ .Values.service.port }}
+    {{ if .Values.server.alluxio.enabled }}
+    cache-manager.config-files={{ .Values.server.config.path }}/cache-manager-alluxio.properties
+    {{ end }}
     {{ if .Values.event_listener.enabled }}
     event-listener.config-files={{ .Values.server.config.path }}/http-event-listener.properties
     {{ end }}
@@ -79,7 +90,7 @@ data:
     {{ end }}
     {{ range $key,$value := .Values.server.config.additional_params }}
     {{ $key }}={{ $value }}
-  {{end}}
+    {{end}}
 
   log.properties: |
     io.trinosql={{ .Values.server.log.trino.level }}

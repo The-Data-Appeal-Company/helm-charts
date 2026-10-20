@@ -37,12 +37,16 @@ data:
     {{ range $value := .Values.server.jvm.additional_params }}
     {{ $value }}
   {{end}}
+
   config.properties: |
     coordinator=false
     http-server.http.port={{ .Values.service.port }}
     query.max-memory={{ .Values.server.config.query.maxMemory }}
     query.max-memory-per-node={{ .Values.server.config.query.maxMemoryPerNode }}
     discovery.uri=http://{{ template "trino.fullname" . }}:{{ .Values.service.port }}
+    {{ if .Values.server.alluxio.enabled }}
+    cache-manager.config-files={{ .Values.server.config.path }}/cache-manager-alluxio.properties
+    {{ end }}
     {{ if .Values.exporters.jmx.enabled }}
     jmx.rmiregistry.port={{ .Values.server.jmx.registryPort }}
     jmx.rmiserver.port={{ .Values.server.jmx.serverPort }}
@@ -54,4 +58,11 @@ data:
   log.properties: |
     io.trinosql={{ .Values.server.log.trino.level }}
 
+  {{ if .Values.server.alluxio.enabled }}
+  cache-manager-alluxio.properties:
+    cache-manager.name=alluxio
+    fs.cache.directories={{ .Values.server.alluxio.directories }}
+    fs.cache.max-sizes={{ .Values.server.alluxio.max-sizes }}
+    fs.cache.ttl={{ .Values.server.alluxio.ttl }}
+  {{ end }}
 {{- end }}

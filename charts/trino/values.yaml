@@ -5,7 +5,7 @@
 image:
   repository: trinodb/trino
   pullPolicy: IfNotPresent
-  tag: 479
+  tag: 484
   imagePullSecrets: []
 
 server:
@@ -41,6 +41,11 @@ server:
   gracefulShutdown:
     enabled: true
     gracePeriodSeconds: 10
+  alluxio:
+    enabled: false
+    directories: ""
+    max-sizes: 30GB
+    ttl: 60m
 
   connectors:
     memory.properties: |-
@@ -49,6 +54,8 @@ server:
     tpcds.properties: |-
       connector.name=tpcds
       tpcds.splits-per-node=4
+
+
 
 securityContext:
   runAsUser: 1000
@@ -725,7 +732,6 @@ exporters:
       interval: 30s
       scrapeTimeout: 30s
       scheme: http
-
 
 exchange:
   enabled: false
