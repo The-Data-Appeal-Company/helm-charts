@@ -59,7 +59,7 @@ data:
     io.trinosql={{ .Values.server.log.trino.level }}
 
   {{ if .Values.server.alluxio.enabled }}
-  cache-manager-alluxio.properties:
+  cache-manager-alluxio.properties: |
     cache-manager.name=alluxio
     fs.cache.directories={{ .Values.server.alluxio.directories }}
     fs.cache.max-sizes={{ .Values.server.alluxio.maxSizes }}
