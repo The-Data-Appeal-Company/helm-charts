@@ -44,7 +44,7 @@ server:
   alluxio:
     enabled: false
     directories: ""
-    max-sizes: 30GB
+    maxSizes: 30GB
     ttl: 60m
 
   connectors:
