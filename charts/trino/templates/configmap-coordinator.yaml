@@ -84,6 +84,9 @@ data:
     {{ if .Values.event_listener.enabled }}
     event-listener.config-files={{ .Values.server.config.path }}/http-event-listener.properties
     {{ end }}
+    {{ if .Values.server.legacyWebUI }}
+    web-ui.legacy.enabled=true
+    {{ end }}
     {{ if .Values.exporters.jmx.enabled }}
     jmx.rmiregistry.port={{ .Values.server.jmx.registryPort }}
     jmx.rmiserver.port={{ .Values.server.jmx.serverPort }}

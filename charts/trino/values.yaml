@@ -47,6 +47,7 @@ server:
     maxSizes: 30GB
     ttl: 60m
 
+  legacyWebUI: false
   connectors:
     memory.properties: |-
       connector.name=memory
